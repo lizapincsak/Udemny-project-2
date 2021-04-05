@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import UserInput from './components/UserInput';
+import UserOutput from './components/UserOutput';
 import './App.css';
 
-function App() {
+class App extends Component {
+
+  state = {
+    flowers: [
+      {flowerName: 'Lily'},
+      {flowerName: 'Rose'},
+      {flowerName: 'Lilac'}
+    ]
+  }
+  render(){
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Favorite Flowers</h1>
+        <UserInput />
+        <UserOutput />
       </header>
     </div>
   );
 }
-
+}
 export default App;
